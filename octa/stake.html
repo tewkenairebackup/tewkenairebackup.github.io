@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>OctaStake</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="img/favicon.png?1" rel="icon" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|NTR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" integrity="sha384-Bho7DVdu9SrApy14A4WS9DCKKdwI9pq83E9pY4SrU+20fU9kQCbgk+UytSXBNlzr" crossorigin="anonymous">
+	<link href="../css/main.css?36" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-xl navbar-dark px-0 pb-sm-0 mb-2 mb-sm-5">
+		<h1 style="font-style: italic;color: #92c855;">OCTASTAKE</h1>
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">DAPPS <span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-left">
+						<div class="dropdown dropleft">
+							<a class="dropdown-item" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1&type=swap" target="_blank">EXCHANGE</a>
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TEWKEN</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">FARMING</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="../tewkentrx.html">TEWKEN/TRX</a>
+									</div>
+								</div>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">GAMES</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="../tewkenity.html">TEWKENITY</a>
+									</div>
+								</div>
+								<a class="dropdown-item" href="../staking.html">STAKING</a>
+								<a class="dropdown-item" href="https://tronscan.org/#/token20/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1" target="_blank">INFO</a>
+								<a class="dropdown-item" href="https://drive.google.com/open?id=1SCEBl0EQKeF1RQAM3sXL5_o37u2k0rin" target="_blank">WHITEPAPER</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">HEX</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="../hextew.html">HEXTEW</a>
+								<a class="dropdown-item" href="../hexrise.html">HEXRISE</a>
+								<a class="dropdown-item" href="../hexmax.html">HEXMAX</a>
+								<a class="dropdown-item" href="../infinihex.html">INFINIHEX</a>
+								<a class="dropdown-item" href="/octa/stake.html">OCTA</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">ETH</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="../stableth.html">STABLE</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TRON</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="../stable.html">STABLE</a>
+								<a class="dropdown-item" href="../crazy.html">CRAZY</a>
+								<a class="dropdown-item" href="../infinitew.html">INFINITEW</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row mb-2 mb-sm-5">
+		<div class="col-md-6 text-left">
+			<p>Wallet: <span class="notranslate" translate="no" id="wallet">Please log into Metamask!</span> &nbsp;&nbsp;&nbsp;Balance: <span id="balance">0</span> HEX</p>
+		</div>
+		<div class="col-md-6 text-right" id="ethWallet">
+			<p>Network: <span id="network">Detecting...</span></p>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Octa Rate</p>
+			<span class="icon_number notranslate" translate="no" id="buyPrice"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">USD</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Bonus Pool</p>
+			<span class="icon_number notranslate" translate="no" id="octaPoolAmount"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">OCTA</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Stake Balance</p>
+			<span class="icon_number notranslate" translate="no" id="stakeBalance"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">HEX</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Buy Pressure</p>
+			<span class="icon_number notranslate" translate="no" id="futureRewards"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">HEX</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Liquidity</p>
+			<span class="icon_number notranslate" translate="no" id="totalLiquidity"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">USD</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Player</p>
+			<span class="icon_number notranslate" translate="no" id="totalPlayer"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">Address</p>
+		</div>
+	</div>
+	<div id="countdown_parent" class="row accord no-gutters mb-1" style="display:none">
+		<div class="col-12">
+			<div class="card py-2 text-center text-white" id="countdown">
+				<h4 class="notranslate mb-0" translate="no">Staking launching in <span class="days"> - </span>d <span class="hours"> - </span>h <span class="minutes"> - </span>m <span class="seconds"> - </span>s</h4>
+			</div>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-12 text-center">
+			<div class="card mb-3">
+				<div class="lead text-white">This is an unofficial backup website</div>
+			</div>
+		</div>
+		<div class="col-12 mb-0 text-center">
+			<div class="card">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">BLOCKCHAIN</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<div id="middleCol" class="transaction-history hextew">
+						<table id="transaction-history-table" class="table table-dark table-striped" style="border-style:hidden;background:#232027">
+							<thead>
+								<tr>
+									<th id="time-stamp" class="text-muted d-none" scope="col">TimeStamp</th>
+									<th class="text-muted" scope="col">Time</th>
+									<th class="text-muted d-none d-sm-table-cell" scope="col">Type</th>
+									<th class="text-muted" scope="col">Player</th>
+									<th class="text-muted" scope="col">Token</th>
+								</tr>
+							</thead>
+							<tbody id="exchange">
+								<tr id="loading" style="display: none;">
+									<td>0</td>
+									<td>Loading ...</td>
+									<td>Loading ...</td>
+									<td>Loading ...</td>
+									<td>Loading ...</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center mb-4">
+		<h1 class="title">STAKING</h1>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-12">
+			<div class="card pl-3">
+				<div class="row no-gutters">
+					<div class="col-lg-3 mt-3 pr-3">
+						<input class="form-control" id="stakeInput" type="number" min="1" placeholder="Enter HEX amount" onkeyup="calculateStakeStartBonusHearts();" onChange="calculateStakeStartBonusHearts();">
+					</div>
+					<div class="col-lg-3 mt-3 pr-3">
+						<input class="form-control" id="dayInput" type="number" min="1" max="5555" placeholder="Enter days (max 5,555)" onkeyup="calculateStakeStartBonusHearts();" onChange="calculateStakeStartBonusHearts();">
+					</div>
+					<div class="col-lg-3 mt-3 pr-3">
+						<input class="form-control" id="effectiveAmount" placeholder="Staking Power" disabled>
+					</div>
+					<div class="col-lg-3 my-1 text-lg-right text-center">
+						<button id="approveTokens" style="left: 15px;" class="small_button position-relative">Approve</button>
+						<button id="stakeTokens" class="small_button">Stake</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<h2 class="title" style="font-size:22px">ACTIVE STAKES</h2>
+	</div>
+	<div class="accord mb-5">
+		<div class="card mb-2">
+			<div class="px-3 text-center">Notice : Remember to unstake when your progress reaches a 100%</div>
+		</div>
+		<table id="stakeActiveTable" class="dash-table" data-toggle="table" data-unique-id="id" data-pagination="true" data-page-size="5" data-pagination-h-align="left" data-pagination-detail-h-align="right" style="border-top-style:hidden;">
+			<thead>
+				<tr>
+					<th class="d-none" data-field="id"></th>
+					<th data-field="start" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Start</th>
+					<th data-field="end" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;End</th>
+					<th data-field="progress" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Progress</th>
+					<th data-field="principal" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Principal</th>
+					<th data-field="shares" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Shares</th>
+					<th data-field="interest" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Extra Tokens</th>
+					<th data-field="currentvalue" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Current Value</th>
+					<th data-field="button" data-cell-style="cellStyle"></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div class="text-center">
+		<h2 class="title" style="font-size:22px">STAKE HISTORY</h2>
+	</div>
+	<div class="accord mb-5">
+		<table id="stakeHistoryTable" class="dash-table" data-toggle="table" data-unique-id="id" data-pagination="true" data-page-size="5" data-pagination-h-align="left" data-pagination-detail-h-align="right" style="border-top-style:hidden;">
+			<thead>
+				<tr>
+					<th class="d-none" data-field="id"></th>
+					<th class="d-none" data-field="amount"></th>
+					<th data-field="start" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Start</th>
+					<th data-field="end" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;End</th>
+					<th data-field="progress" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Progress</th>
+					<th data-field="principal" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Principal</th>
+					<th data-field="shares" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Shares</th>
+					<!-- <th data-field="shares" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Shares</th>
+					<th data-field="bigpayday" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;BigPayDay</th> -->
+					<!-- <th data-field="interest" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Interest</th> -->
+					<!-- <th data-field="currentvalue" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Current Value</th> -->
+					<th data-field="estimatedPayout" data-sortable="true" data-sorter="numberSorter">&nbsp;&nbsp;Net In/Out</th>
+					<th data-field="button" data-cell-style="cellStyle"></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div class="text-center mb-5">
+			<h1 class="title">MY STATS</h1>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 col-md-3 text-center stats">
+			<p class="icon_title mb-2">Total Staked</p>
+			<span class="icon_number notranslate" translate="no" id="totalMyStaked"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">HEX</p>
+		</div>
+		<div class="col-6 col-md-3 text-center stats">
+			<p class="icon_title mb-2">Staking Net In/Out</p>
+			<span class="icon_number notranslate" translate="no" id="stakedNetProfitLoss"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">HEX</p>
+		</div>
+		<div class="col-6 col-md-3 text-center stats">
+			<p class="icon_title mb-2">Total Octa Swapped</p>
+			<span class="icon_number notranslate" translate="no" id="totalOctaSwapped"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">OCTA</p>
+		</div>
+		<div class="col-6 col-md-3 text-center stats">
+			<p class="icon_title mb-2">Total Octa Bonus</p>
+			<span class="icon_number notranslate" translate="no" id="totalOctaBonus"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">OCTA</p>
+		</div>
+	</div>
+	<div id="faq">
+		<div class="text-center mb-4">
+				<h1 class="title">FAQ</h1>
+		</div>
+		<div class="accord mb-5" id="accordion">
+			<div class="card mb-1">
+				<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseOne">
+							How to use this platform?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						To use this platform on PC,
+				    <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en" target="_blank">Metamask</a>
+				    extension must be installed on your Google Chrome browser.
+            If you are using smartphone <a href="https://play.google.com/store/apps/details?id=io.metamask&hl=en" target="_blank">Metamask[Android]</a>
+            or <a href="https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202" target="_blank">Metamask[IOS]</a> is suitable.
+            Put some HEX in your wallet and begin!<br>
+            <b>Tip:</b> <br>
+            When interacting with smart contracts, it's always better to have some ETH for gas. The gas will be consumed
+            when triggering smart contract's functions
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseTwo">
+							How does the game work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						OCTA is a reimagination of HEX with a low token supply<br>
+						You can obtain OCTA by allocating your HEX to:<br>
+						- The one time minting phase which runs for 30 days or <br>
+						- Staking (available after the minting phase ends)<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingMint">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseMint">
+							How does the minting phase work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseMint" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						OCTA is generated during a one time 30 day Mint Phase where anyone may choose to mint 0.0001 OCTA per HEX pledged to the Octa Contract<br>
+						Once the Mint Phase ends, the smart contract will execute a single 5555 day stake with all the HEX<br>
+						Once the stake has ended, users may redeem their portion of the HEX stake principal and earned reward<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingThree">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseThree">
+							How does the staking work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						Staking Power (also known as Effective HEX) determines how many shares you get for your hex stake<br>
+						When you stake your HEX token, you are staking to the original HEX contract endorsed by Richard Heart<br>
+						When you unstake, you are bound by the rules set in the original HEX contract (penalties or rewards)<br>
+						When you unstake, only profitable stakes are subjected to conversion (principal in HEX, yield in OCTA)<br>
+						When you unstake, only profitable stakes are rewarded a 10% bonus (based on the yield) from the bonus pool<br>
+						When the single 5555 day pooled stake ends, any leftover tokens in the bonus pool are not included in the calculation to redeem HEX (protects minters from dilution)<br>
+						You are not subjected to any fees when you stake or unstake<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFour">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFour">
+							What is the token distribution?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFour" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<span class="totalMinted"></span> OCTA broken down as followed : <br>
+						50% for users who participate in the minting phase<br>
+						45% for bonus pool (locked in staking contract permanently)<br>
+						2.5% liquidity provision<br>
+						1.25% custodian 1<br>
+						1.25% custodian 2<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFive">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+							What is the contract address?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<a class="text-white" href="https://etherscan.io/address/0xb9c1C6364467dF64E91e1A175c00990d17775275" target="_blank">Octa Token</a><br>
+						<a class="text-white" href="https://etherscan.io/address/0x04d6c50d54015450ce2d7fe4b1010df3ce69930f" target="_blank">Octa Staking</a><br>
+						<a class="text-white" href="https://etherscan.io/address/0x76f0252054656bf8ef8633c5d3f345116aeb6dca" target="_blank">Octa Swap</a><br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="row no-gutters" id="footer_row">
+
+			<div class="col-12 small text-justify text-muted" style="line-height:1.5;">This application is beta software and is highly experimental. To the greatest extent possible Tewkenaire has been implemented to be accessible directly on-chain without a user interface. This website and associated APIs have been provided for convenience.
+
+Ultimately you are interacting with no other party other than the blockchain itself and are 100% responsible for your transactions. Please do your own research before interacting with any contract or asset on the blockchain. Tewkenaire is a decentralized autonomous organization and is never liable for losses that happen using this user interface or its smart contracts.</div>
+		</div>
+	</div>
+	<div id="google_translate_element2"></div>
+</div>
+<div class="modal fade" id="endStakeModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content" style="background-color: #232027">
+			<div class="modal-header">
+				<h2 class="modal-title" id="endStakeModalLabel">Confirm End Stake</h2>
+				<button id="secClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true" style="color:white;">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<span id="stakeMessage" class="lead"></span><br>
+			</div>
+			<div class="modal-footer p-0">
+				<button id="mainClose" type="button" class="button" data-dismiss="modal">Close</button>
+				<button id="endStakeConfirm" type="button" class="button">End Stake</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="buyInfo" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content" style="background-color: #232027">
+			<div class="modal-header">
+				<h2 class="modal-title" id="buyInfoModalLabel">How to enter?</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true" style="color:white;">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<span class="lead">1) You have to approve 2 transactions (Approve and Enter)<br>
+				2) First key in the amount of HEX you want to deposit. Then click Approve<br>
+				3) Once the transaction has been mined, the Enter button will be enabled<br>
+				4) Key in the amount you just approved. Then click Enter<br></span>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.2.11/dist/web3.min.js" integrity="sha384-ov1JhoOZ+CNgADocviQd7922YCzI4v0xlGUxWiVKBjwNOk/K+oDSbFiXEFpL4Cf1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js" integrity="sha384-kAbV+S9m0faTaFLnoAFNv3GYgGMyR38fsW/v929VLIiw7VgFvEC//WVxM4krTrVW" crossorigin="anonymous"></script>
+<script src="../js/octewStake.js?4"></script>
+<script src="../js/dropdown.js?2"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+.playingcard {
+  background-color: #fff;
+  font-family: 'NTR';
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  border-radius: 0.8em;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  width: 16em;
+  height: 22.4em;
+  margin: 0 0 1.2em 0;
+  position: relative;
+  z-index: 2;
+}
+.playingcard.noshadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.playingcard .card-back img {
+  width: 16em;
+  height: 22.4em;
+}
+.playingcard .flipped {
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.playingcard .heart,
+.playingcard .diamond {
+  color: #df0000;
+}
+.playingcard .club,
+.playingcard .spade {
+  color: #000000;
+}
+.playingcard .corner {
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+}
+.playingcard .corner span {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.playingcard .corner .number {
+  font-size: 2em;
+  height: 1.92em/2;
+  line-height: 1.92em/2;
+}
+.playingcard .corner.top {
+  left: 0.64em;
+  top: 0.96em;
+}
+.playingcard .corner.bottom {
+  bottom: 0.96em;
+  right: 0.64em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .card-ace span.suit.middle_center {
+  font-size: 10.24em;
+  left: 0.45517241379310347em;
+  top: 0.593103448275862em;
+}
+.playingcard .card-ten .corner .number {
+  font-size: 1.5em;
+}
+.playingcard .face img {
+  position: absolute;
+  left: 2.56em;
+  top: 2.08em;
+  width: 10.8em;
+  height: 18.24em;
+}
+.playingcard .suit {
+  font-size: 5.8em;
+  font-weight: normal;
+  width: 0.6896551724137931em;
+  height: 0.786206896551724em;
+  line-height: 0.786206896551724em;
+  position: absolute;
+  text-align: center;
+}
+.playingcard .suit.top_center {
+  left: 1.0482758620689656em;
+  top: 0.3310344827586207em;
+}
+.playingcard .suit.top_left {
+  left: 0.41379310344827586em;
+  top: 0.3310344827586207em;
+}
+.playingcard .suit.top_right {
+  right: 0.41379310344827586em;
+  top: 0.3310344827586207em;
+}
+.playingcard .suit.middle_center {
+  left: 1.0482758620689656em;
+  top: 1.517241379310345em;
+}
+.playingcard .suit.middle_top {
+  left: 1.0482758620689656em;
+  top: 0.9655172413793103em;
+}
+.playingcard .suit.middle_bottom {
+  bottom: 0.9655172413793103em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.middle_left {
+  left: 0.41379310344827586em;
+  top: 1.517241379310345em;
+}
+.playingcard .suit.middle_right {
+  right: 0.41379310344827586em;
+  top: 1.517241379310345em;
+}
+.playingcard .suit.middle_top_center {
+  left: 1.0482758620689656em;
+  top: 0.8275862068965517em;
+}
+.playingcard .suit.middle_top_left {
+  left: 0.41379310344827586em;
+  top: 1.103448275862069em;
+}
+.playingcard .suit.middle_top_right {
+  right: 0.41379310344827586em;
+  top: 1.103448275862069em;
+}
+.playingcard .suit.middle_bottom_left {
+  bottom: 1.103448275862069em;
+  left: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.middle_bottom_right {
+  bottom: 1.103448275862069em;
+  right: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.middle_bottom_center {
+  bottom: 0.8275862068965517em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.bottom_center {
+  bottom: 0.3310344827586207em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.bottom_left {
+  bottom: 0.3310344827586207em;
+  left: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.playingcard .suit.bottom_right {
+  bottom: 0.3310344827586207em;
+  right: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
