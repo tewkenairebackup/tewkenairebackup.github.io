@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tewkenaire Network</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="img/favicon.png?1" rel="icon" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|NTR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="css/main.css?37" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-xl navbar-dark px-0 pb-sm-0 mb-2 mb-sm-5">
+		<h1 style="font-style: italic;color: #92c855;">STABLE ETH</h1>
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">DAPPS <span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-left">
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TEWKEN</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1&type=swap" target="_blank">EXCHANGE</a>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">FARMING</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkentrx.html">TEWKEN/TRX</a>
+									</div>
+								</div>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">GAMES</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkenity.html">TEWKENITY</a>
+									</div>
+								</div>
+								<a class="dropdown-item" href="staking.html">STAKING</a>
+								<a class="dropdown-item" href="https://tronscan.org/#/token20/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1" target="_blank">INFO</a>
+								<a class="dropdown-item" href="https://drive.google.com/open?id=1SCEBl0EQKeF1RQAM3sXL5_o37u2k0rin" target="_blank">WHITEPAPER</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">HEX</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="hextew.html">HEXTEW</a>
+								<a class="dropdown-item" href="hexrise.html">HEXRISE</a>
+								<a class="dropdown-item" href="hexmax.html">HEXMAX</a>
+								<a class="dropdown-item" href="infinihex.html">INFINIHEX</a>
+								<a class="dropdown-item" href="/octa/stake.html">OCTA</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">ETH</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stableth.html">STABLE</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TRON</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stable.html">STABLE</a>
+								<a class="dropdown-item" href="crazy.html">CRAZY</a>
+								<a class="dropdown-item" href="infinitew.html">INFINITEW</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row mb-2 mb-sm-5">
+		<div class="col-md-6 text-left">
+			<p>Wallet: <span class="notranslate" translate="no" id="wallet">Please log into Metamask!</span> &nbsp;&nbsp;&nbsp;Balance: <span id="balance">0</span> ETH</p>
+		</div>
+		<div class="col-md-6 text-right" id="ethWallet">
+			<p>Network: <span id="network">Detecting...</span></p>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Contract Ownership</p>
+			<span class="icon_number notranslate" translate="no" id="playerShare"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">Percentage</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">In Rate</p>
+			<span class="icon_number notranslate" translate="no" id="buyPrice"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Out Rate</p>
+			<span class="icon_number notranslate" translate="no" id="sellPrice"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Contract Balance</p>
+			<span class="icon_number notranslate" translate="no" id="contractBalance"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Players</p>
+			<span class="icon_number notranslate" translate="no" id="totalPlayer"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted">Address</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Donated</p>
+			<span class="icon_number notranslate" translate="no" id="tewkenaireFund"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div id="runningSince" class="col-12 text-center d-none">
+			<div class="card mb-3">
+				<div class="lead text-white">Running for <span class="notranslate" translate="no" id="time" class="mb-5"><span class="months">-</span> months <span class="days">-</span> days <span class="hours">-</span> hours <span class="minutes">-</span> minutes <span class="seconds">-</span> seconds</span></div>
+			</div>
+		</div>
+		<div class="col-12 text-center">
+			<div class="card mb-3">
+				<div class="lead text-white">This is an unofficial backup website</div>
+			</div>
+		</div>
+		<div class="col-lg-3 text-center pr-lg-2">
+			<div class="card mb-5 mb-lg-3">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">MY VAULT</h1>
+				</div>
+				<div class="form_text mx-3">
+					<span class="notranslate" translate="no" id="myTokens">0.000 STABLE</span><br>
+					≈ <span class="notranslate" translate="no" id="myTokensEstimate">0 ETH</span>
+					<hr class="bg-white">
+					<div id="myDividendsMain" class="row no-gutters">
+					   <div class="col-xl-4 text-xl-left text-center form_text">Rewards</div><div class="lead col-xl-8 text-xl-right text-center form_text"><span class="notranslate" translate="no" id="myDividends">- ETH</span></div>
+					</div>
+					<div id="myDividendsPreLaunch" style="display:none;">
+						 <div class="text-center form_text">Pre-launch rewards in <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span></div>
+					</div>
+				</div>
+				<div class="mb-3">
+					<button id="reinvest" class="small_button">Roll</button>
+					<button id="withdraw" class="small_button">Withdraw</button>
+				</div>
+			</div>
+			<div class="card mb-5 mb-lg-0">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">TRANSFER</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<input id="transferAddress" type="string" class="form-control mb-3" placeholder="Enter wallet address"><input id="transferInput" type="number" min="0" step="0.01" class="form-control mb-3" placeholder="Enter token amount">
+					<button id="transferTokens" class="button">Transfer</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 mb-5 mb-lg-3 text-center px-lg-2">
+			<div class="card">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">BLOCKCHAIN</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<div id="transaction-history" class="transaction-history">
+						<table id="transaction-history-table" class="table table-dark table-striped" style="border-style:hidden;background:#232027">
+							<thead>
+								<tr>
+									<th class="text-muted" scope="col">Time</th>
+									<th class="text-muted" scope="col">Player</th>
+									<th class="text-muted" scope="col">Stable</th>
+								</tr>
+							</thead>
+							<tbody id="exchange">
+								<tr id="loading" style="display: none;">
+									<td>Loading ...</td>
+									<td>Loading ...</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 mb-0 text-center pl-lg-2">
+			<div class="card mb-5 mb-lg-3 d-none">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">IN</h1>
+				</div>
+				<div class="form_text mx-3 mb-3"><input id="buyInput" type="number" min="0.01" class="form-control mb-3" placeholder="Enter amount (min 0.01 ETH)" onkeyup="calculateTokensReceived();" onChange="calculateTokensReceived();">
+					≈ <span class="notranslate" translate="no" id="buyEstimate">0.000 STABLE</span><br><button id="buyTokens" class="button">Enter</button>
+				</div>
+			</div>
+			<div class="card mb-1 mb-lg-3">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">OUT</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<input id="sellInput" type="number" min="0" step="0.1"  class="form-control mb-3" placeholder="Enter token amount" onkeyup="calculateEthereumReceived();" onChange="calculateEthereumReceived();">
+					≈ <span class="notranslate" translate="no" id="sellEstimate">0.000 ETH</span><br><button id="sellTokens" class="button">Exit</button>
+				</div>
+			</div>
+			<div class="card d-none">
+				<a class="text-white" target="_blank" href="https://etherscan.io/token/0xe01e2a3CEaFA8233021Fc759E5A69863558326b6#balances">LEADERBOARD</a>
+			</div>
+		</div>
+	</div>
+	<div class="text-center mb-5">
+			<h1 class="title">MY STATS</h1>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 text-center stats">
+			<p class="icon_title mb-2">Total In</p>
+			<span class="icon_number notranslate" translate="no" id="totalDeposit"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+		<div class="col-6 text-center stats">
+			<p class="icon_title mb-2">Total Out</p>
+			<span class="icon_number notranslate" translate="no" id="totalWithdrawal"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">ETH</p>
+		</div>
+	</div>
+	<div id="faq">
+		<div class="text-center mb-4">
+				<h1 class="title">FAQ</h1>
+		</div>
+		<div class="accord mb-5" id="accordion">
+			<div class="card mb-1">
+				<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseOne">
+							How to use this platform?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						To use this platform on PC,
+				    <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en" target="_blank">Metamask</a>
+				    extension must be installed on your Google Chrome browser.
+            If you are using smartphone <a href="https://play.google.com/store/apps/details?id=io.metamask&hl=en" target="_blank">Metamask[Android]</a>
+            or <a href="http://testflight.apple.com/join/4cYoRF4M" target="_blank">Metamask[IOS]</a> is suitable.
+            Put some ETH in your wallet and begin!<br>
+            <b>Tip:</b> <br>
+            When interacting with smart contracts, it's always better to have some ETH for gas. The gas will be consumed
+            when triggering smart contract's functions
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseTwo">
+							How does the game work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						STABLE is pegged 1:1 to ETH (1 STABLE will always equal to 1 ETH). Dump proof<br>
+						When you enter or exit, 10% is deducted from your deposit and distributed among STABLE holders<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFour">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFour">
+							What are the fees?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFour" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						10% entry fee (8% distribution + 1% crazy floor + 1% dev)<br>
+						10% exit fee (8% distribution + 1% crazy floor + 1% dev)<br>
+						1% transfer fee<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFive">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+							What is the contract address?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<a class="text-white" href="https://etherscan.io/address/0xe01e2a3CEaFA8233021Fc759E5A69863558326b6" target="_blank">https://etherscan.io/address/0xe01e2a3CEaFA8233021Fc759E5A69863558326b6</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="row no-gutters" id="footer_row">
+
+			<div class="col-12 small text-justify text-muted" style="line-height:1.5;">This application is beta software and is highly experimental. To the greatest extent possible Tewkenaire has been implemented to be accessible directly on-chain without a user interface. This website and associated APIs have been provided for convenience.
+
+Ultimately you are interacting with no other party other than the blockchain itself and are 100% responsible for your transactions. Please do your own research before interacting with any contract or asset on the blockchain. Tewkenaire is a decentralized autonomous organization and is never liable for losses that happen using this user interface or its smart contracts.</div>
+		</div>
+	</div>
+	<div id="google_translate_element2"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js" integrity="sha256-XH+mnS1YTklQJ7VzeLSviplcaKwkRWpwDwHUNXVCuIU=" crossorigin="anonymous"></script>
+<script src="js/stableth.js?14"></script>
+<script src="js/dropdown.js?2"></script>
+</body>
+</html>

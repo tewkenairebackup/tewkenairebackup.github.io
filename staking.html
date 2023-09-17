@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tewkenaire Network</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="img/favicon.png?1" rel="icon" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|NTR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="css/main.css?37" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-xl navbar-dark px-0 pb-sm-0 mb-2 mb-sm-5">
+		<h1 style="font-style: italic;color: #92c855;">TEWKENSTAKING</h1>
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">DAPPS <span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-left">
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TEWKEN</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1&type=swap" target="_blank">EXCHANGE</a>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">FARMING</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkentrx.html">TEWKEN/TRX</a>
+									</div>
+								</div>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">GAMES</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkenity.html">TEWKENITY</a>
+									</div>
+								</div>
+								<a class="dropdown-item" href="staking.html">STAKING</a>
+								<a class="dropdown-item" href="https://tronscan.org/#/token20/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1" target="_blank">INFO</a>
+								<a class="dropdown-item" href="https://drive.google.com/open?id=1SCEBl0EQKeF1RQAM3sXL5_o37u2k0rin" target="_blank">WHITEPAPER</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">HEX</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="hextew.html">HEXTEW</a>
+								<a class="dropdown-item" href="hexrise.html">HEXRISE</a>
+								<a class="dropdown-item" href="hexmax.html">HEXMAX</a>
+								<a class="dropdown-item" href="infinihex.html">INFINIHEX</a>
+								<a class="dropdown-item" href="/octa/stake.html">OCTA</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">ETH</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stableth.html">STABLE</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TRON</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stable.html">STABLE</a>
+								<a class="dropdown-item" href="crazy.html">CRAZY</a>
+								<a class="dropdown-item" href="infinitew.html">INFINITEW</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row mb-2 mb-sm-5">
+		<div class="col-md-6 text-left">
+			<p>Wallet: <span class="notranslate" translate="no" id="wallet">Please log into Tronlink!</span> &nbsp;&nbsp;&nbsp;Balance: <span id="balance">0</span> TEWKEN</p>
+		</div>
+		<div class="col-md-6 text-right" id="tronWallet">
+			<p>Bandwidth: <span class="notranslate" translate="no" id="bandwidth">0 </span> &nbsp;&nbsp;&nbsp;Network: <span id="network">Detecting...</span></p>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<div id="estDailyPercentage" style="width:70px;height:70px;padding: 16px 0;border-width:2px!important" class="rounded-circle border border-white mx-auto d-none">-%</div>
+			<p class="icon_title mb-2">Daily TEW</p>
+			<span class="icon_number notranslate" translate="no" id="estDailyReturns"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TEWKEN</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Staking Pool</p>
+			<span class="icon_number notranslate" translate="no" id="dividendPool"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TEWKEN</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Current APR</p>
+			<span class="icon_number notranslate" translate="no" id="currentAPR"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">Percentage</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Stakers</p>
+			<span class="icon_number notranslate" translate="no" id="totalPlayer"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted">Address</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Total Mined</p>
+			<span class="icon_number notranslate" translate="no" id="totalMinedTewken"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TEWKEN</p>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2 text-center stats">
+			<p class="icon_title mb-2">Mining Difficulty</p>
+			<span class="icon_number notranslate" translate="no" id="miningDifficulty"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TRX</p>
+		</div>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div id="runningSince" class="col-12 text-center">
+			<div class="card mb-3">
+				<div class="lead text-white">This is an unofficial backup website<br>500K drip in <span class="notranslate" translate="no" id="time" class="mb-5"><span class="days">-</span> days <span class="hours">-</span> hours <span class="minutes">-</span> minutes <span class="seconds">-</span> seconds</span></div>
+			</div>
+		</div>
+		<div class="col-lg-3 text-center pr-lg-2">
+			<div id="leftCol1" class="card mb-5 mb-lg-3">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">TEW VAULT</h1>
+				</div>
+				<div class="form_text mx-3">
+					<span class="notranslate" translate="no" id="myTokens">0.00 TEWKEN</span>
+					<hr class="bg-white">
+					<div class="row no-gutters">
+					   <div class="col-xl-4 text-xl-left text-center form_text">Rewards</div><div class="lead col-xl-8 text-xl-right text-center form_text"><span class="notranslate" translate="no" id="myDividends">- TEWKEN</span></div>
+					 </div>
+				</div>
+				<div class="mb-3">
+					<button id="rollTewken" class="small_button">Roll</button>
+					<button id="withdrawTewken" class="small_button">Withdraw</button>
+				</div>
+			</div>
+			<div id="leftCol2" style="z-index:2" class="card mb-5 mb-lg-3">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">TRX VAULT</h1>
+				</div>
+				<div class="form_text mx-3">
+					<span class="notranslate" translate="no" id="myInfinity">0.00 INFINITY</span><br>
+					<span class="notranslate" translate="no" id="myStable">0.00 STABLE</span><br>
+					<span class="notranslate" translate="no" id="myCrazy">0.00 CRAZY</span>
+					<hr class="bg-white">
+					<div class="row no-gutters">
+					   <div class="col-xl-4 text-xl-left text-center form_text">Rewards</div><div class="lead col-xl-8 text-xl-right text-center form_text"><span class="notranslate" translate="no" id="myDividendTRX">- TRX</span></div>
+					 </div>
+				</div>
+				<div class="mb-3">
+					<span class="dropdown">
+					  <button class="small_button dropdown-toggle" type="button" data-toggle="dropdown">
+					    Roll
+					  </button>
+					  <div class="dropdown-menu">
+							<button id="rollInfinity" class="dropdown-item" type="button">INFINITY</button>
+					    <button id="rollStable" class="dropdown-item" type="button">STABLE</button>
+					    <button id="rollCrazy" class="dropdown-item" type="button">CRAZY</button>
+					  </span>
+					</div>
+					<button id="withdrawTRX" class="small_button">Withdraw</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 mb-5 mb-lg-3 text-center px-lg-2">
+			<div class="card">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">BLOCKCHAIN</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<div id="middleCol" class="transaction-history staking">
+						<table id="transaction-history-table" class="table table-dark table-striped" style="border-style:hidden;background:#232027">
+							<thead>
+								<tr>
+									<th class="text-muted" scope="col">Time</th>
+									<th class="text-muted" scope="col">Staker</th>
+									<th class="text-muted" scope="col">Tewken</th>
+								</tr>
+							</thead>
+							<tbody id="exchange">
+								<tr id="loading" style="display: none;">
+									<td>Loading ...</td>
+									<td>Loading ...</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 mb-0 text-center pl-lg-2">
+			<div class="card mb-5 mb-lg-3">
+				<div class="card_text text-justify">
+					<i class="fa fa-question-circle float-right" data-toggle="modal" data-target="#stakeInfoModal"></i>
+					<h1 class="title text-center">STAKE</h1>
+				</div>
+				<div class="form_text mx-3"><input id="stakeInput" type="number" min="1" class="form-control mb-3" placeholder="Enter amount (TEWKEN)">
+				</div>
+				<div class="mb-3">
+					<button id="approveTokens" class="small_button">Approve</button>
+					<button id="stakeTokens" class="small_button">Stake</button>
+				</div>
+			</div>
+			<div class="card mb-5 mb-lg-3">
+				<div class="card_text text-justify">
+					<h1 class="title text-center">UNSTAKE</h1>
+				</div>
+				<div class="form_text mx-3 mb-3">
+					<input id="unstakeInput" type="number" min="0" step="0.1"  class="form-control mb-3" placeholder="Enter amount (TEWKEN)">
+					<button data-toggle="modal" data-target="#unstakeModal"class="button">Unstake</button>
+				</div>
+			</div>
+			<div class="card">
+				<div class="text-center" style="margin-bottom:1rem;margin-top:1rem">
+					<a class="title text-center" style="font-size:22px" target="_blank" href="https://tronscan.org/#/token20/TG1zhkQCH8zdYpJFiyy5iR4dwYTNnwpT6p/holders">LEADERBOARD</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center mb-5">
+			<h1 class="title">MY STATS</h1>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-6 col-md-4 text-center stats">
+			<p class="icon_title mb-2">Total In</p>
+			<span class="icon_number notranslate" translate="no" id="totalMyDeposit"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TEWKEN</p>
+		</div>
+		<div class="col-6 col-md-4 text-center stats">
+			<p class="icon_title mb-2">Total Out</p>
+			<span class="icon_number notranslate" translate="no" id="totalMyWithdrawalTewken"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TEWKEN</p>
+		</div>
+		<div class="col-6 col-md-4 text-center stats">
+			<p class="icon_title mb-2">Total Out</p>
+			<span class="icon_number notranslate" translate="no" id="totalMyWithdrawalTRX"><i class="fas fa-spinner fa-spin"></i></span>
+			<p translate="no" class="small text-muted notranslate">TRX</p>
+		</div>
+	</div>
+	<div class="text-center mb-4">
+		<h1 class="title">TUTORIAL</h1>
+	</div>
+	<div class="row accord no-gutters mb-5">
+		<div class="col-12">
+			<div class="embed-responsive embed-responsive-16by9">
+				 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rMB5nRMYQJQ" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<div id="faq">
+		<div class="text-center mb-4">
+				<h1 class="title">FAQ</h1>
+		</div>
+		<div class="accord mb-5" id="accordion">
+			<div class="card mb-1">
+				<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseOne">
+							How to use this platform?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						To use this platform on PC,
+				    <a href="https://chrome.google.com/webstore/detail/tronlink/ibnejdfjmmkpcnlpebklmnkoeoihofec" target="_blank">TronLink</a>
+				    extension must be installed on your Google Chrome browser.
+	          If you are using smartphone <a href="https://apps.apple.com/us/app/tokenpocket/id1436028697" target="_blank">TokenPocket [iOS]</a>
+	          or <a href="https://play.google.com/store/apps/details?id=vip.mytokenpocket&hl=en" target="_blank">TokenPocket [Android]</a> is suitable.
+	          Put some TRX in your wallet and begin!<br>
+	          <b>Tip:</b> <br>
+	          When interacting with smart contracts, it's always better to freeze some TRX to gain Energy. This way energy will be consumed
+	          when triggering smart contract's functions, instead of TRX.
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseTwo">
+							How does the game work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						The staking contract drips 2% of the staking pool daily to TEWKEN stakers<br>
+						250k to 1 million TEWKEN is allocated to the staking pool every 2 months<br>
+						The staking contract also rewards TRX as a bonus to stakers<br>
+						INFINITEW and Crazy will provide external source of revenue to the contract<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFour">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFour">
+							What are the fees?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFour" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						0% stake fee<br>
+						10% unstake fee (collected in trx for instant TRX rewards and swapping to tokens for staking pool)<br>
+						10 - 50% trx vault roll fee (10% for Stable & Crazy, 50% for Infinitew)<br>
+						0% withdraw fee<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFive">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+							What is the contract address?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<a class="text-white" href="https://tronscan.org/#/contract/TG1zhkQCH8zdYpJFiyy5iR4dwYTNnwpT6p" target="_blank">https://tronscan.org/#/contract/TG1zhkQCH8zdYpJFiyy5iR4dwYTNnwpT6p</a>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingSeven">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseSeven">
+							What is TEWKEN token ?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseSeven" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						TEWKEN is a TRC20 token running on the TRON blockchain<br>
+						TEWKEN is scarce because its initial supply starts at 0 and caps at 100 million<br>
+						Mining difficulty starts at 1 TRX and increases by 1 TRX every 2.5 million TEWKEN mined<br>
+						Token address : <a class="text-white" href="https://tronscan.org/#/contract/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1" target="_blank">https://tronscan.org/#/contract/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="row no-gutters" id="footer_row">
+
+			<div class="col-12 small text-justify text-muted" style="line-height:1.5;">This application is beta software and is highly experimental. To the greatest extent possible Tewkenaire has been implemented to be accessible directly on-chain without a user interface. This website and associated APIs have been provided for convenience.
+
+Ultimately you are interacting with no other party other than the blockchain itself and are 100% responsible for your transactions. Please do your own research before interacting with any contract or asset on the blockchain. Tewkenaire is a decentralized autonomous organization and is never liable for losses that happen using this user interface or its smart contracts.</div>
+		</div>
+	</div>
+	<div id="google_translate_element2"></div>
+</div>
+<div class="modal fade" id="stakeInfoModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content" style="background-color: #232027">
+			<div class="modal-header">
+				<h2 class="modal-title" id="stakeInfoModalLabel">How to stake?</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true" style="color:white;">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<span class="lead">1) You have to approve 2 transactions (Approve and Stake)<br>
+				2) First key in the amount of TEWKEN you want to stake. Then click Approve<br>
+				3) Once the transaction has been mined, the Stake button will be enabled<br>
+				4) Key in the amount you just approved. Then click Stake<br></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="unstakeModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content" style="background-color: #232027">
+			<div class="modal-header">
+				<h2 class="modal-title" id="unstakeModalLabel">Confirm Unstake?</h2>
+				<button id="secClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true" style="color:white;">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<span class="lead">To unstake <span id="unstakeAmount"><i class="fas fa-spinner fa-spin"></i></span> TEWKEN, you need to pay <span id="unstakeFee"><i class="fas fa-spinner fa-spin"></i></span> TRX</span>
+			</div>
+			<div class="modal-footer p-0">
+				<button id="unstakeClose" type="button" class="button" data-dismiss="modal">Close</button>
+				<button id="unstakeTokens" type="button" class="button">Unstake</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/staking.js?17"></script>
+<script src="js/dropdown.js?3"></script>
+</body>
+</html>

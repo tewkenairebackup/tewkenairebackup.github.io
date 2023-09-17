@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tewkenaire Network</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="img/favicon.png?1" rel="icon" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|NTR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="css/main.css?37" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-xl navbar-dark px-0 pb-sm-0 mb-2 mb-sm-5">
+		<a class="navbar-brand position-relative" href="#"><img src="img/17ZCp4h.png" style="height:70px" /></a>
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">DAPPS <span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-left">
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TEWKEN</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1&type=swap" target="_blank">EXCHANGE</a>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">FARMING</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkentrx.html">TEWKEN/TRX</a>
+									</div>
+								</div>
+								<div class="dropdown dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">GAMES</a>
+									<div class="dropdown-menu" style="top:-9px;">
+										<a class="dropdown-item" href="tewkenity.html">TEWKENITY</a>
+									</div>
+								</div>
+								<a class="dropdown-item" href="staking.html">STAKING</a>
+								<a class="dropdown-item" href="https://tronscan.org/#/token20/TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1" target="_blank">INFO</a>
+								<a class="dropdown-item" href="https://drive.google.com/open?id=1SCEBl0EQKeF1RQAM3sXL5_o37u2k0rin" target="_blank">WHITEPAPER</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">HEX</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="hextew.html">HEXTEW</a>
+								<a class="dropdown-item" href="hexrise.html">HEXRISE</a>
+								<a class="dropdown-item" href="hexmax.html">HEXMAX</a>
+								<a class="dropdown-item" href="infinihex.html">INFINIHEX</a>
+								<a class="dropdown-item" href="/octa/stake.html">OCTA</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">ETH</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stableth.html">STABLE</a>
+							</div>
+						</div>
+						<div class="dropdown dropleft">
+							<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">TRON</a>
+							<div class="dropdown-menu" style="top:-9px;">
+								<a class="dropdown-item" href="stable.html">STABLE</a>
+								<a class="dropdown-item" href="crazy.html">CRAZY</a>
+								<a class="dropdown-item" href="infinitew.html">INFINITEW</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row mb-2 mb-sm-5">
+		<div class="col-md-6 text-left">
+			<p>Wallet: <span class="notranslate" translate="no" id="wallet">Please log into Tronlink!</span> &nbsp;&nbsp;&nbsp;Balance: <span id="balance">0</span> TRX</p>
+		</div>
+		<div class="col-md-6 text-right" id="tronWallet">
+			<p>Bandwidth: <span class="notranslate" translate="no" id="bandwidth">0 </span> &nbsp;&nbsp;&nbsp;Network: <span id="network">Detecting...</span></p>
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="col-lg-6 mb-5 text-center">
+			<div class="card">
+				<div class="row">
+					<div class="col-12 mb-3 stats">
+						<h2 class="title text-center card_text">Stats</h2>
+					</div>
+					<div class="col-6 col-sm-4 text-center">
+						<img src="img/GfY2Pft.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Total Entry</p>
+						<span class="icon_number notranslate" translate="no" id="totalPlayers">-</span>
+						<p class="icon_unit">Address</p>
+					</div>
+					<div class="col-6 col-sm-4 text-center stats">
+						<img src="img/mZocgjn.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Total In</p>
+						<span class="icon_number notranslate" translate="no" id="totalDeposits">-</span>
+						<p class="icon_unit">TRX</p>
+					</div>
+					<div class="col-6 col-sm-4 text-center">
+						<img src="img/fuNkwoC.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Undistributed dividends</p>
+						<span class="icon_number notranslate" translate="no" id="totalUndistributedDividends">-</span>
+						<p class="icon_unit">TRX</p>
+					</div>
+					<div class="col-6 col-sm-4 text-center stats">
+						<img src="img/JKdF5k1.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Minted Crazy token</p>
+						<span class="icon_number notranslate" translate="no" id="tewkens">-</span>
+						<p class="icon_unit">Crazy</p>
+					</div>
+					<div class="col-6 col-sm-4 text-center">
+						<img src="img/UV7Z4Wa.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Distributed Dividend</p>
+						<span class="icon_number notranslate" translate="no" id="totalDividends">-</span>
+						<p class="icon_unit">TRX</p>
+					</div>
+					<div class="col-6 col-sm-4 text-center">
+						<img src="img/GfY2Pft.png" class="icon_stat" height="70"/>
+						<p class="icon_title mb-2">Entries backlog</p>
+						<span class="icon_number notranslate" translate="no" id="backlogPlayers">-</span>
+						<p class="icon_unit">Address</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="row">
+				<div class="col-12 mb-5 text-center pr-lg-2">
+					<div class="card">
+						<div class="card_text text-justify">
+							<h2 class="title text-center">Pending Payment</h2>
+						</div>
+						<div class="form_text mx-3 mb-3">
+              	<div class="h1 mb-3" translate="no"><span id="myPendingPayment">-</span> TRX</div>
+              	<div class="mb-3">( <span id="myPosition"><i class="fas fa-spinner fa-spin"></i></span> players before your turn to get paid <span id="myAmount"><i class="fas fa-spinner fa-spin"></i></span> <span translate="no">tron</span> )</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 text-center pr-lg-2">
+					<div class="card">
+						<div class="card_text text-justify">
+							<h2 class="title text-center">Play</h2>
+						</div>
+						<div class="form_text mx-3">
+							<input id="depositAmount" type="number" min="10" max="100" class="form-control mb-3" placeholder="Enter amount (min 10 trx and max 100 trx)">
+							<button id="deposit" class="button btn btn-primary mb-3">Enter</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="faq">
+		<div class="text-center mb-4">
+				<h2 class="title">FAQ</h2>
+		</div>
+		<div class="accord mb-5" id="accordion">
+			<div class="card mb-1">
+				<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseOne">
+							How to use this platform?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						To use this platform on PC,
+						    <a href="https://chrome.google.com/webstore/detail/tronlink/ibnejdfjmmkpcnlpebklmnkoeoihofec" target="_blank">TronLink</a> or
+						    <a href="https://chrome.google.com/webstore/detail/tronpay/gjdneabihbmcpobmfhcnljaojmgoihfk" target="_blank">TronPay</a>
+						    extension must be installed on your Google Chrome browser.
+                            If you are using smartphone <a href="https://apple.co/2AW9iX2" target="_blank">TronWallet [iOS]</a>
+                            or <a href="https://goo.gl/aGVd5T" target="_blank">TronWallet [Android]</a> is suitable.
+                            Put some TRX in your wallet and begin!<br>
+                            <b>Tip:</b> <br>
+                            When interacting with smart contracts, it's always better to freeze some TRX to gain Energy. This way energy will be consumed
+                            when triggering smart contract's functions, instead of TRX.
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseTwo">
+							How does the game work?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						Faucet allows players to double their deposits (200% returns).<br>
+						50% of your initial deposit are used to purchased CRAZY tokens.<br>
+						Remaining 50% of your deposit is paid out to existing players.<br>
+						Dividends are generated while the contract holds on to CRAZY tokens.<br>
+						Those dividends are distributed to all player, in the order they invested.<br>
+						There is a deposit limit to prevent players from occupying the queue.<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingThree">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseThree">
+							What are the fees?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						There is a 2% developer fees<br>
+						You will be refunded 80% of your initial deposit if the game were to cease operation<br>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-header" id="headingFive">
+					<h5 class="mb-0">
+						<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+							What is the contract address?
+						</a>
+					</h5>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<a class="text-white" href="https://tronscan.org/#/contract/TJLwvP6kKNKjEij6qxmFgJ54bsKqcDyKQd" target="_blank">https://tronscan.org/#/contract/TJLwvP6kKNKjEij6qxmFgJ54bsKqcDyKQd</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="row no-gutters" id="footer_row">
+
+			<div class="col-12 small text-justify text-muted" style="line-height:1.5;">This application is beta software and is highly experimental. To the greatest extent possible Tewkenaire has been implemented to be accessible directly on-chain without a user interface. This website and associated APIs have been provided for convenience.
+
+Ultimately you are interacting with no other party other than the blockchain itself and are 100% responsible for your transactions. Please do your own research before interacting with any contract or asset on the blockchain. Tewkenaire is a decentralized autonomous organization and is never liable for losses that happen using this user interface or its smart contracts.</div>
+		</div>
+	</div>
+	<div id="google_translate_element2"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/faucet.js?104"></script>
+<script src="js/dropdown.js?2"></script>
+</body>
+</html>

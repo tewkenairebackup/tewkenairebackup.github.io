@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tewkenaire Network</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="img/favicon.png?1" rel="icon" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|NTR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { h1 {
+    font-size: 50px;
+  }}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { h1 {
+    font-size: 75px;
+  }}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+h1 {
+    font-size: 85px;
+ }}
+
+body{
+	font:18px NTR;
+	color: white;
+}
+
+.logos a:hover {
+    text-decoration: none;
+}
+
+.card {
+	background-color: #232027;
+	color: #fff
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 100%;
+	border-radius: 10px;
+  opacity: 0.9;
+	min-height: 0;
+}
+
+.card:hover {
+	box-shadow: 0 0 5px 5px rgba(146, 200, 85);
+}
+
+.card-body {
+	background-color: #777374;
+}
+
+.card-body a {
+ color: rgba(255,255,255,.5);
+}
+
+.title{
+	font:32px 'Audiowide', cursive;
+	color:#92c855;
+}
+
+#octamint:hover, #octastake:hover, #hextew:hover, #hexrise:hover, #hexmax:hover, #infinihex:hover, #infinitew:hover, #stable:hover, #crazy:hover, #tewkenstaking:hover, #tewkenity:hover, #tewkenTRX:hover {
+	 background: rgba(255,255,255,.5);
+}
+
+</style>
+<body style="background-color:#252330">
+<div class="d-flex align-items-center min-vh-100">
+	<div class="container">
+		<div class="row logos">
+			<div class="col-12 text-center text-white my-5">
+				<img style="min-width:250px" class="img-fluid w-50" src="img/SrCGNuh.jpg">
+			</div>
+			<div class="col-12">
+				<a href="/"><i id="back" class="fa fa-undo float-right text-muted" style="display:none"></i></a>
+			</div>
+			<div id="tewken" class="offset-lg-2 col-lg-4 mb-4 text-center">
+				<div class="card p-5">
+					<a id="tewken-link" href="#" role="button"><img class="mb-3" src="img/Vvp2u3h.png"><div class="title">Tewken</div></a>
+				</div>
+			</div>
+			<div id="tewkenstaking" class="offset-2 offset-lg-3 col-8 col-lg-6 mb-5" style="display:none">
+				<a id="tewkenstaking-link" href="staking.html"><img id="tewkenstaking" href="staking.html" style="width:100%" class="img-fluid mx-auto d-block" src="img/s7FyDxp.png"></a>
+			</div>
+			<div id="tewkenTRX" class="offset-2 offset-lg-3 col-8 col-lg-6 mb-5" style="display:none">
+				<a id="tewkenTRX-link" href="tewkentrx.html"><img id="tewkenTRX" href="tewkentrx.html" style="width:85%" class="img-fluid mx-auto d-block" src="img/oGmJ0Qd.png"></a>
+			</div>
+			<div id="tewkenity" class="offset-2 offset-lg-3 col-8 col-lg-6 mb-5" style="display:none">
+				<a id="tewkenity-link" href="tewkenity.html"><img id="tewkenity" href="tewkenity.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/GnASzTT.png"></a>
+			</div>
+			<div id="hex" class="col-lg-4 mb-4 text-center">
+				<div class="card p-5">
+					<a id="hex-link" href="hextew.html" role="button"><img class="mb-3" src="img/2heRHhJ.png"><div class="title">Hex</div></a>
+				</div>
+			</div>
+			<!-- <div id="octamint" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="octamint-link" href="octa/mint.html"><img id="octamint" href="octa/mint.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/mh09N2R.png"></a>
+			</div> -->
+			<div id="octastake" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="octastake-link" href="octa/stake.html"><img id="octastake" href="octa/stake.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/oNlEhOn.png"></a>
+			</div>
+			<!-- <div id="hextew" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="hextew-link" href="hextew.html"><img id="hextew" href="hextew.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/zRf0qUb.png"></a>
+			</div>
+			<div id="hexrise" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="hexrise-link" href="hexrise.html"><img id="hexrise" href="hexrise.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/jz7c7fD.png"></a>
+			</div>
+			<div id="hexmax" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="hexmax-link" href="hexmax.html"><img id="hexmax" href="hexmax.html" style="width:75%" class="img-fluid mx-auto d-block" src="img/xfaLy1p.png"></a>
+			</div>
+			<div id="infinihex" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="infinihex-link" href="infinihex.html"><img id="infinihex" href="infinihex.html" style="width:90%" class="img-fluid mx-auto d-block" src="img/nJyurOr.png"></a>
+			</div> -->
+			<!-- <div id="tron" class="offset-lg-2 col-lg-4 mb-4 text-center">
+				<div class="card p-5">
+					<a id="tron-link" href="#" role="button"><img class="mb-3" src="img/eXKkhWQ.png"><div class="title">Tron</div></a>
+				</div>
+			</div>
+			<div id="stable" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="stable-link" href="stable.html"><img id="stable" href="stable.html" style="width:65%" class="img-fluid mx-auto d-block" src="img/xM1dIqU.png"></a>
+			</div>
+			<div id="crazy" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="crazy-link" href="crazy.html"><img id="crazy" style="width:65%" class="img-fluid mx-auto d-block" src="img/O4vXEUe.png"></a>
+			</div>
+			<div id="infinitew" class="offset-3 col-6 mb-5" style="display:none">
+				<a id="infinitew-link" href="infinitew.html"><img id="infinitew" href="infinitew.html" style="width:100%" class="img-fluid mx-auto d-block" src="img/rklwqml.png"></a>
+			</div>
+			<div id="ethereum" class="col-lg-4 mb-4 text-center">
+				<div class="card p-5">
+					<a href="stableth.html" role="button"><img class="mb-3" src="img/vqXad5u.png"><div class="title">Ethereum</div></a>
+				</div>
+			</div>
+			<div id="dai" class="col-lg-4 mb-5 text-center">
+				<div class="card p-5">
+					<a href="daimax.html" role="button"><img class="mb-3" src="img/GiAhnHY.png"><div class="title">Dai</div></a>
+				</div>
+			</div> -->
+			<div class="col-12">
+				<div class="accord mb-5" id="accordion">
+					<div id="headingTewkenaire" class="card mb-2">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseOne">
+									What is TEWKENAIRE?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseOne" class="" data-parent="#accordion">
+							<div class="card-body">
+								Tewkenaire is a social experiment running on the blockchain. It is a community driven ecosystem of smart-contracts that circulates cryptocurrency rewards to its players.
+							</div>
+						</div>
+					</div>
+					<div id="headingStaking" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseStaking">
+									What is TEWKEN STAKING?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseStaking" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								The staking contract drips 2% of the staking pool daily to TEWKEN stakers<br>
+								250k to 1 million TEWKEN is allocated to the staking pool every 2 months<br>
+								The staking contract also rewards TRX as a bonus to stakers<br>
+								INFINITEW and Crazy will provide external source of revenue to the contract<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingTewkenTRX" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseTewkenTRX">
+									What is TEWKEN FARM?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseTewkenTRX" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								Supply liquidity at <a class="text-white" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TBhxyECmAg3uCqqmEHQvGJbrgj9cn1yMZ1&type=add">JustSwap</a> to obtain TEWKEN/TRX liquidity pool tokens<br>
+								The farming contract drips 2% of the farming pool daily to TEWKEN/TRX farmers<br>
+								250K - 1 million TEWKEN is allocated to the farming pool every 2 months<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingTewkenity" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseTewkenity">
+									What is TEWKENITY?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseTewkenity" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								TEWKENITY is price inflationary token relative to TEWKEN and drips 2% of the reward pool per day<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingOcta" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+									What is OCTA?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseFive" data-parent="#accordion">
+							<div class="card-body">
+								OCTA is a reimagination of HEX with a low token supply<br>
+								You can obtain OCTA by allocating your HEX to:<br>
+								- The one time minting phase which runs for 30 days or <br>
+								- Staking HEX (available after the minting phase ends)<br>
+							</div>
+						</div>
+					</div>
+					<!-- <div id="headingStable" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseStable">
+									What is STABLE?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseStable" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<b>STABLE</b> is a stable dividend token in the Tewkenaire economy. Unlike <b>CRAZY</b>, <b>STABLE</b> does not have volatility, as it’s value is pegged 1:1 with TRX. This means you can enjoy rewards from transaction fees like CRAZY, but without the fear of a crash. The downside of STABLE is you don’t have gains in token value. STABLE also feeds the CRAZY contract with a 1% TRX fee from every stable transaction, this distributes rewards to CRAZY holders and raises the value of CRAZY tewkens.
+							</div>
+						</div>
+					</div>
+					<div id="headingCrazy" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseFour">
+									What is CRAZY?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseFour" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<p><b>CRAZY</b> is an immutable defi (decentralized finance) smart contract that allows you to exchange TRX for "Crazy", a token that mints TRX rewards for the lifetime of the Tron blockchain. Crazy tewken holders receive TRX rewards when a user enters, exits, or transfers the crazy tewken. The amount of TRX rewards received is based on the amount of crazy tewkens said user holds. For example, say there are 100,000 crazy total. If you are holding 10,000 crazy, you own 10% of the supply. This means when someone enters or exits the crazy contract, you would receive TRX rewards valued 10% of the TRX transaction fee.</p>
+								<p>When users enter or exit the contract, it affects the value of crazy. When someone enters the contract the CRAZY rate goes up. When a user exits, the rate goes down. Crazy tewken holders get rewards in TRX, up or down. The great thing about CRAZY is it has a floor. Using ambassador wallets, TRX is pushed into the contracts using partner dapps to keep the value rising. The in/out rate being volatile is why these tewkens are called “crazy”.</p>
+							</div>
+						</div>
+					</div>
+					<div id="headingInfinitew" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseInfinitew">
+									What is INFINITEW?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseInfinitew" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								Infinitew is pegged 1:1 to TRX and drips 2% of the reward pool per day<br>
+								TEWKEN TRC20 is also mined on every entry and re-entry<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingHextew" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseFive">
+									What is HEXTEW?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseFive" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								HEX is a supply inflationary token. HEX2 is a dividend token<br>
+								HEX2 is pegged 1:1 to HEX (1 HEX2 will always equal to 1 HEX). Dump proof<br>
+								When you enter or exit, part of your deposit is distributed among HEX2 holders<br>
+								You can stake your HEX2 token to the original Hex contract endorsed by Richard Heart<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingHexrise" class="card mb-2" style="display:none">
+						<div class="card-header" >
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseSix">
+									What is HEXRISE?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseSix" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								HEX is a supply inflationary token. HEX2 is a dividend token. HEX3 is a price inflationary token<br>
+								HEX3 is like HEX2 on steroids (max loss at 10% and inflates in value when players enter/exit or unstake)<br>
+								When you enter or exit, part of your deposit is allocated to the inflation reserve / pool<br>
+								You can stake your HEX3 token to the original Hex contract endorsed by Richard Heart<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingHexmax" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseSeven">
+									What is HEXMAX?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseSeven" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								HEX4 is a dividend and price inflationary token<br>
+								HEX4 combines the best of both worlds (HEXTEW and HEXRISE)<br>
+								When you enter or exit, part of your deposit is allocated to the inflation and reward pool<br>
+								You can stake your HEX4 token to the original Hex contract endorsed by Richard Heart<br>
+							</div>
+						</div>
+					</div>
+					<div id="headingInfinitehex" class="card mb-2" style="display:none">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<a class="text-white collapsed" data-toggle="collapse" href="#collapseInfinitehex">
+									What is INFINIHEX?
+								</a>
+							</h5>
+						</div>
+						<div id="collapseInfinitehex" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								Infinihex is pegged 1:1 to HEX and drips 2% of the reward pool daily<br>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+$(document).ready(() => {
+  // $("#hex-link").click(function(){
+// 		$("#headingTewkenaire").hide();
+// 		$("#hex").hide();
+// 		$("#ethereum").hide();
+// 		$("#tron").hide();
+// 		$("#tewken").hide();
+// 		$("#dai").hide();
+// 		// $("#octamint").fadeIn();
+// 		$("#octastake").fadeIn();
+// 		$("#headingOcta").fadeIn();
+// 	    // $("#hextew").fadeIn();
+// 	    // $("#headingHextew").fadeIn();
+// 		// $("#hexrise").fadeIn();
+// 		// $("#headingHexrise").fadeIn();
+// 		// $("#hexmax").fadeIn();
+// 		// $("#headingHexmax").fadeIn();
+// 		// $("#infinihex").fadeIn();
+// 		// $("#headingInfinitehex").fadeIn();
+// 		$("#back").fadeIn();
+  // });
+
+	// $("#tron-link").click(function(){
+	// 	$("#headingTewkenaire").hide();
+	// 	$("#hex").hide();
+	// 	$("#ethereum").hide();
+	// 	$("#tron").hide();
+	// 	$("#tewken").hide();
+	// 	$("#dai").hide();
+	// 	$("#stable").fadeIn();
+	// 	$("#headingStable").fadeIn();
+	// 	$("#crazy").fadeIn();
+	// 	$("#headingCrazy").fadeIn();
+	// 	$("#infinitew").fadeIn();
+	// 	$("#headingInfinitew").fadeIn();
+	// 	$("#back").fadeIn();
+	// });
+
+	$("#tewken-link").click(function(){
+		$("#headingTewkenaire").hide();
+		$("#hex").hide();
+		$("#ethereum").hide();
+		$("#tron").hide();
+		$("#tewken").hide();
+		$("#dai").hide();
+		$("#tewkenstaking").fadeIn();
+		$("#headingStaking").fadeIn();
+		$("#tewkenTRX").fadeIn();
+		$("#headingTewkenTRX").fadeIn();
+		$("#tewkenity").fadeIn();
+		$("#headingTewkenity").fadeIn();
+		$("#back").fadeIn();
+	});
+});
+</script>
+</body>
+</html>
